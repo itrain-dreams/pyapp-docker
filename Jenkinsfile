@@ -22,7 +22,7 @@ node{
     }
    
    stage("Tag & Push image"){
-      withDockerRegistry([credentialsId: 'dockerID',url: ""]) {
+      withDockerRegistry(credentialsId: 'dockerID', url: 'https://hub.docker.com/') {
           sh 'docker tag manee2k6/pulsar-pyapp manee2k6/pulsar-pyapp:dev'
           sh 'docker push manee2k6/pulsar-pyapp:dev'
           sh 'docker push manee2k6/pulsar-pyapp:latest'
