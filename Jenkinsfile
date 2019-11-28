@@ -2,7 +2,7 @@ node{
    
    stage(" Code Checkout"){
       echo 'App build started..'
-      git credentialsId: 'dockerID', url: 'https://github.com/itrain-dreams/pyapp-docker.git'
+      git credentialsId: 'githubid-docker', url: 'https://github.com/itrain-dreams/pyapp-docker.git'
       }
    stage('Code Build') {
      
@@ -22,7 +22,7 @@ node{
     }
    
    stage("Tag & Push image"){
-      withDockerRegistry(credentialsId: 'dockerID', url: 'https://hub.docker.com/') {
+      withDockerRegistry(credentialsId: 'dockerID', url: '') {
           sh 'docker tag manee2k6/pulsar-pyapp manee2k6/pulsar-pyapp:dev'
           sh 'docker push manee2k6/pulsar-pyapp:dev'
           sh 'docker push manee2k6/pulsar-pyapp:latest'
