@@ -18,7 +18,7 @@ node{
     }
    
    stage('Docker Build') {
-     def app = docker.build "manee2k6/pulsar-pyapp"
+     def app = docker.build "imnikhil1989/pulsar-pyapp"
     }
    
    stage("Tag & Push image"){
